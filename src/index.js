@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// o nome do arquivo principal precisa ser index por causa do webpack.
+import React from "react";
+import ReactDOM from "react-dom/client"; // a versão 18 exige o /client.
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function App() {
+  return <h1>Olá mundo!!</h1>;
+}
+
+//forma de criar a root do React a partir da versão 18.
+//são 2 etapas: 1 - criar a root // 2 - renderizar tudo dentro da root.
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/*StrictMode renderiza tudo dentro dele 2 vezes para verificar a existência de bugs.*/}
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
