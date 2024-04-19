@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css"; //importação de arquivo CSS global pelo webpack.
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -12,13 +13,18 @@ function App() {
 }
 
 function Header() {
-  return <h1>FAST REACT PIZZA CO.</h1>;
+  return (
+    /* estilização através de classes. Observe que utiliza-se className e não class, pois class é uma palavra reservada do JS. */
+    <header className="header">
+      <h1>FAST REACT PIZZA CO.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
-      <h3>Our Menu:</h3>
+    <div className="menu">
+      <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
@@ -28,9 +34,9 @@ function Menu() {
 
 function Pizza() {
   return (
-    <div>
+    <div className="pizza">
       <img src="images/spinaci.jpg" alt="spinaci pizza" />
-      <h1>Pizza Spinaci</h1>
+      <h3>Pizza Spinaci</h3>
       <p>Ingredients: Tomato, mozarella, spinach, and ricotta cheese</p>
     </div>
   );
@@ -38,9 +44,10 @@ function Pizza() {
 
 function Footer() {
   return (
-    /* new Date().toLocaleTimeString() é para colocar em string o horário local. */
-    <p>
-      Time:{new Date().toLocaleTimeString()} We are open ultil 22:00. Come visit
+    /*   estilização inline dentro do JSX. Primeiro precisa abrir chaves para pode usar JS e depois precisa de mais um par de chaves porque a estilização é um objeto. Além disso, nos nomes dos estilos não são aceitos traços, sendo necessário o uso do camelCase */
+    /* essa estilização poderia ser colocada dentro de uma variável e depois a variável poderia ser passada para dentro do jsx. */
+    <p style={{ fontSize: "12px" }}>
+      Time:{new Date().toLocaleTimeString()} We are open until 22:00. Come visit
       us or order online.
     </p>
   );
