@@ -12,3 +12,11 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 3- Criação da root e renderização do componente App nela.
 
 > 4- StrictMode envolvendo todos os elementos renderizados na root (adicionado comentário explicando o motivo de sua utilização).
+
+**Branch 2:**
+
+> 1- Criação de mais um componente (Pizza).
+
+> 2- Colocação do componente Pizza dentro do componente pai App. Dessa forma, quando App for renderizado, renderizará Pizza também.
+
+> 3- Criação da pasta images dentro da pasta public. Essa pasta contém as imagens que serão utilizadas na aplicação.
