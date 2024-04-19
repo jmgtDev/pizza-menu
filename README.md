@@ -20,3 +20,13 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 2- Colocação do componente Pizza dentro do componente pai App. Dessa forma, quando App for renderizado, renderizará Pizza também.
 
 > 3- Criação da pasta images dentro da pasta public. Essa pasta contém as imagens que serão utilizadas na aplicação.
+
+**Branch 3:**
+
+> 1- Nesse branch foram criados mais componentes e alguns foram redistribuídos.
+
+> 2- Criação dos componentes Header, Menu e Footer.
+
+> 3- Componentes Pizza saíram do componente App e foram para o componente Menu, para simplificação do componente App.
+
+> 4- Componente Header, Menu e Footer colocados dentro do componente App.
