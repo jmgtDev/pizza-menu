@@ -60,3 +60,11 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 2- Primeiro foi acrescentado o array que simula um banco de dados. Esse banco de dados contém todas as informações das pizzas que serão renderizadas.
 
 > 3- Depois, dentro do componente Menu, o método map() foi utilizado para passar pelo banco de dados transformando cada item em um componente Pizza com as informações respectivas. Com isso, todas as pizzas foram renderizadas no componente Menu.
+
+**Branch 7:**
+
+> 1- Nesse branch foi inserido o conceito de renderização condicional com o &&.
+
+> 2- Modificação do componente Menu para que, caso o banco de dados não tivesse nenhuma pizza, fosse renderizado um parágrafo avisando desse fato.
+
+> 3- Modificação do componente Footer para que, de acordo com a hora, renderizar um aviso mostrando se o restaurante está aberto ou fechado.

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
-/* simulação de um banco de dados com informações sobre as pizzas */
 const pizzaData = [
   {
     name: "Focaccia",
@@ -70,7 +69,8 @@ function Menu() {
   return (
     <div className="menu">
       <h2>Our Menu</h2>
-      {/*Agora não é mais necessário passar cada um dos componentes e todos dados individualmente. Essas informações já encontram-se no banco de dados. Dessa forma, só precisamos renderizar o banco de dados com o método .map  */}
+      {pizzaData.length === 0 && <h1>Ainda não temos pizzas!</h1>}{" "}
+      {/*caso ainda não existam pizzas no banco de dados, será renderizado um parágrafo avisando. Renderização condicional*/}
       {pizzaData.map((pizza) => (
         <Pizza
           name={pizza.name}
@@ -96,12 +96,32 @@ function Pizza(props) {
   );
 }
 
+/* Obtém a hora do dia e verifica se a loja está aberta ou fechada. De acordo com a resposta renderiza o footer. Renderização condicional */
 function Footer() {
+  let isOpen = false;
+  const hour = new Date().getHours();
+  const closeHour = 22;
+  const openHour = 8;
+  if (hour >= openHour && hour < closeHour) {
+    isOpen = true;
+  }
   return (
-    <p className="footer">
-      Time:{new Date().toLocaleTimeString()} We are open until 22:00. Come visit
-      us or order online.
-    </p>
+    <div className="footer">
+      {isOpen && (
+        <p>
+          Time:{new Date().toLocaleTimeString()} We are{" "}
+          <span style={{ color: "green", fontWeight: "bold" }}>open</span> until
+          22:00. Come visit us or order online.
+        </p>
+      )}
+      {!isOpen && (
+        <p>
+          Time:{new Date().toLocaleTimeString()} We are{" "}
+          <span style={{ color: "red", fontWeight: "bold" }}>closed</span> until
+          22:00. Come visit us or order online.
+        </p>
+      )}
+    </div>
   );
 }
 
