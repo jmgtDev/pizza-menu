@@ -42,3 +42,13 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 4- index.css foi importado para o index.js.
 
 > 5- Adição de estilo nos componentes App, Header, Menu e Pizza através de classes que vêm do arquivo index.css.
+
+**Branch 5:**
+
+> 1- Nesse branch foram introduzidas as props. Com elas, os componentes podem ser reutilizados com características únicas e cada reutilização.
+
+> 2- Modificado o componente Pizza para que os seus valores sejam dinâmicos, ou seja, podem mudar de acordo com as props recebidas.
+
+> 3- Dentro do componente Menu, foram passados 3 componentes Pizza com props únicas para cada um.
+
+> 4- Modificação de alguns estilos e acréscimo de outros, mas nada novo.

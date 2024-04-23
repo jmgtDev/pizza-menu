@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css"; //importação de arquivo CSS global pelo webpack.
+import "./index.css";
 
 function App() {
   return (
@@ -14,7 +14,6 @@ function App() {
 
 function Header() {
   return (
-    /* estilização através de classes. Observe que utiliza-se className e não class, pois class é uma palavra reservada do JS. */
     <header className="header">
       <h1>John's Pizza Co.</h1>
     </header>
@@ -25,28 +24,54 @@ function Menu() {
   return (
     <div className="menu">
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza /* Componente pai agora manda propriedades para o elemento filho para que ele seja capaz de mudar de acordo com essas propriedades. */
+        name="Focaccia"
+        ingredients="Bread with italian olive oil and rosemary"
+        price={
+          6
+        } /* como quero passar um número e não uma string preciso colocar entre chaves. */
+        photoSrc="images/focaccia.jpg"
+      />
+      <Pizza
+        name="Pizza Margherita"
+        ingredients="Tomato and mozarella"
+        price={10}
+        photoSrc="images/margherita.jpg"
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        price={12}
+        photoSrc="images/funghi.jpg"
+      />
+      <Pizza
+        name="Pizza Salamino"
+        ingredients="Tomato, mozarella, and pepperoni"
+        price={15}
+        photoSrc="images/salamino.jpg"
+      />
     </div>
   );
 }
 
-function Pizza() {
+/* o componente recebe o objeto props, que contém todas as propriedades do passadas pelo elemento pai. Com isso, os dados agora são dinâmicos, mudando de acordo com as propriedades recebidas.
+Para acessar os valores de props, basta acessar suas propriedades com ponto e o nome da propriedade, como é feito abaixo*/
+function Pizza(props) {
   return (
     <div className="pizza">
-      <img src="images/spinaci.jpg" alt="spinaci pizza" />
-      <h3>Pizza Spinaci</h3>
-      <p>Ingredients: Tomato, mozarella, spinach, and ricotta cheese</p>
+      <img src={props.photoSrc} alt={props.name} />
+      <div className="pizzaData">
+        <h3>{props.name}</h3>
+        <p className="ingredients">{props.ingredients}</p>
+        <p>{`Price: $${props.price}`}</p>
+      </div>
     </div>
   );
 }
 
 function Footer() {
   return (
-    /*   estilização inline dentro do JSX. Primeiro precisa abrir chaves para pode usar JS e depois precisa de mais um par de chaves porque a estilização é um objeto. Além disso, nos nomes dos estilos não são aceitos traços, sendo necessário o uso do camelCase */
-    /* essa estilização poderia ser colocada dentro de uma variável e depois a variável poderia ser passada para dentro do jsx. */
-    <p style={{ fontSize: "12px" }}>
+    <p className="footer">
       Time:{new Date().toLocaleTimeString()} We are open until 22:00. Come visit
       us or order online.
     </p>
