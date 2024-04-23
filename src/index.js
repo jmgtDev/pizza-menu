@@ -16,7 +16,7 @@ function Header() {
   return (
     /* estilização através de classes. Observe que utiliza-se className e não class, pois class é uma palavra reservada do JS. */
     <header className="header">
-      <h1>FAST REACT PIZZA CO.</h1>
+      <h1>John's Pizza Co.</h1>
     </header>
   );
 }

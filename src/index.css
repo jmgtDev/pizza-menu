@@ -7,13 +7,12 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 10px;
 }
 
 body {
   font-family: "Roboto Mono", sans-serif;
   color: #252525;
-  font-weight: 400;
   background-color: #f7f2e9;
   border-bottom: 1.6rem solid #edc84b;
   min-height: 100vh;
@@ -24,7 +23,6 @@ body {
 .container {
   max-width: 80rem;
   margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,7 +30,7 @@ body {
 }
 
 .header {
-  align-self: stretch;
+  align-self: stretch; /* O valor stretch faz com que o item se estenda para ocupar todo o espaço disponível no eixo cruzado (perpendicular ao eixo principal definido pela propriedade flex-direction no contêiner. */
 }
 
 .header h1 {
@@ -47,25 +45,6 @@ body {
   display: block;
 }
 
-.header h1::before,
-.header h1::after {
-  display: block;
-  content: "";
-  height: 3px;
-  width: 4rem;
-  background-color: #edc84b;
-  position: absolute;
-  top: calc(50% - 1px);
-}
-
-.header h1::before {
-  left: 0;
-}
-
-.header h1::after {
-  right: 0;
-}
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -74,7 +53,6 @@ body {
 }
 
 .menu h2 {
-  display: inline-block;
   padding: 1rem 0;
   border-top: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
@@ -84,13 +62,6 @@ body {
   font-weight: 500;
 }
 
-.pizzas {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4.8rem;
-}
-
 .pizza {
   display: flex;
   gap: 3.2rem;
@@ -98,8 +69,7 @@ body {
 
 .pizza img {
   width: 12rem;
-  aspect-ratio: 1;
-  align-self: start;
+  aspect-ratio: 1; /* A propriedade aspect-ratio no CSS é usada para especificar a proporção entre a largura e a altura de um elemento. O valor 1 significa que a largura e a altura do elemento são iguais, criando um quadrado perfeito. */
 }
 
 .pizza h3 {
