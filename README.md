@@ -63,8 +63,18 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 
 **Branch 7:**
 
-> 1- Nesse branch foi inserido o conceito de renderização condicional com o &&.
+> 1- Nesse branch foi inserido o conceito de renderização condicional com o && (operador AND).
 
 > 2- Modificação do componente Menu para que, caso o banco de dados não tivesse nenhuma pizza, fosse renderizado um parágrafo avisando desse fato.
 
 > 3- Modificação do componente Footer para que, de acordo com a hora, renderizar um aviso mostrando se o restaurante está aberto ou fechado.
+
+**Branch 8:**
+
+> 1- Nesse branch foram adicionados outros dois métodos de renderização condicional (operador ternário e multiplos returns), além de adição de uma prop key para cada elemento renderizado pelo map()
+
+> 2-O componente Footer passou a ter sua renderização condicional feita pelo operador ternário.
+
+> 3-A lista renderizada pelo map() precisa de uma key única para cada elemento. Nesse branch foi adicionada essa key.
+
+> 4-Modificação do componente Pizza para que ele tenha renderização condicional com múltiplos returns. Dependendo da condição, algum return específico será renderizado.

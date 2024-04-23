@@ -30,7 +30,7 @@ body {
 }
 
 .header {
-  align-self: stretch; /* O valor stretch faz com que o item se estenda para ocupar todo o espaço disponível no eixo cruzado (perpendicular ao eixo principal definido pela propriedade flex-direction no contêiner. */
+  align-self: stretch;
 }
 
 .header h1 {
@@ -70,7 +70,7 @@ body {
 
 .pizza img {
   width: 12rem;
-  aspect-ratio: 1; /* A propriedade aspect-ratio no CSS é usada para especificar a proporção entre a largura e a altura de um elemento. O valor 1 significa que a largura e a altura do elemento são iguais, criando um quadrado perfeito. */
+  aspect-ratio: 1;
 }
 
 .pizza h3 {

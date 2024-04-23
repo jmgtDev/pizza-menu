@@ -8,7 +8,7 @@ const pizzaData = [
     ingredients: "Bread with italian olive oil and rosemary",
     price: 6,
     photoName: "images/focaccia.jpg",
-    soldOut: false,
+    soldOut: true,
   },
   {
     name: "Pizza Margherita",
@@ -70,20 +70,26 @@ function Menu() {
     <div className="menu">
       <h2>Our Menu</h2>
       {pizzaData.length === 0 && <h1>Ainda não temos pizzas!</h1>}{" "}
-      {/*caso ainda não existam pizzas no banco de dados, será renderizado um parágrafo avisando. Renderização condicional*/}
       {pizzaData.map((pizza) => (
         <Pizza
+          key={pizza.name} /* key única para cada elemento da lista */
           name={pizza.name}
           ingredients={pizza.ingredients}
           price={pizza.price}
           photoSrc={pizza.photoName}
+          soldOut={
+            pizza.soldOut
+          } /* prop soldOut passada para a renderização condicional do componente Pizza */
         />
       ))}
     </div>
   );
 }
 
+/* renderização condicional com múltiplos returns. */
 function Pizza(props) {
+  if (props.soldOut) return null;
+
   return (
     <div className="pizza">
       <img src={props.photoSrc} alt={props.name} />
@@ -96,7 +102,7 @@ function Pizza(props) {
   );
 }
 
-/* Obtém a hora do dia e verifica se a loja está aberta ou fechada. De acordo com a resposta renderiza o footer. Renderização condicional */
+/*Renderização condicional com o operador ternário*/
 function Footer() {
   let isOpen = false;
   const hour = new Date().getHours();
@@ -107,14 +113,13 @@ function Footer() {
   }
   return (
     <div className="footer">
-      {isOpen && (
+      {isOpen ? (
         <p>
           Time:{new Date().toLocaleTimeString()} We are{" "}
           <span style={{ color: "green", fontWeight: "bold" }}>open</span> until
           22:00. Come visit us or order online.
         </p>
-      )}
-      {!isOpen && (
+      ) : (
         <p>
           Time:{new Date().toLocaleTimeString()} We are{" "}
           <span style={{ color: "red", fontWeight: "bold" }}>closed</span> until
