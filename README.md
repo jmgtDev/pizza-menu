@@ -52,3 +52,11 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 3- Dentro do componente Menu, foram passados 3 componentes Pizza com props únicas para cada um.
 
 > 4- Modificação de alguns estilos e acréscimo de outros, mas nada novo.
+
+**Branch 6:**
+
+> 1- Nesse branch foi inserido um array simulando um banco de dados. Assim, renderizamos os componentes Pizza através do método map() com o banco de dados.
+
+> 2- Primeiro foi acrescentado o array que simula um banco de dados. Esse banco de dados contém todas as informações das pizzas que serão renderizadas.
+
+> 3- Depois, dentro do componente Menu, o método map() foi utilizado para passar pelo banco de dados transformando cada item em um componente Pizza com as informações respectivas. Com isso, todas as pizzas foram renderizadas no componente Menu.
