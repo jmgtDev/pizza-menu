@@ -78,3 +78,19 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 3-A lista renderizada pelo map() precisa de uma key única para cada elemento. Nesse branch foi adicionada essa key.
 
 > 4-Modificação do componente Pizza para que ele tenha renderização condicional com múltiplos returns. Dependendo da condição, algum return específico será renderizado.
+
+**Branch 9:**
+
+> 1- Nesse branch tivemos desestruturação do objeto prop e atribuição condicional de classes para estilização, além de outras mudanças pontuais de estilização.
+
+> 2- Primeiramente foi adicionado um botão no componente Footer para simular o início de um pedido de um cliente.
+
+> 3- O objeto props recebido pelo componente Pizza foi desestruturado. Dessa forma, fica registrada a forma desestruturada de receber props.
+
+> 4- Acréscimo de um parágrafo de apresentação do cardápio.
+
+> 5- Adicionado um novo texto para caso o menu não tenha pizzas.
+
+> 6- Modificação do componente Pizza para que alguns elementos tivessem classes atribuídas de forma condicional. No caso, as pizzas que estão sem estoque, passam a ficar em preto e branco. Além disso, pizzas sem estoque não mostram mais o preço e sim o aviso de esgotadas.
+
+> 7- Toda a estilização foi atualizada para funcionar em aparelhos mobile.

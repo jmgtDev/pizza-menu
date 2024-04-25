@@ -6,42 +6,42 @@ const pizzaData = [
   {
     name: "Focaccia",
     ingredients: "Bread with italian olive oil and rosemary",
-    price: 6,
+    price: 10,
     photoName: "images/focaccia.jpg",
     soldOut: true,
   },
   {
     name: "Pizza Margherita",
     ingredients: "Tomato and mozarella",
-    price: 10,
+    price: 12,
     photoName: "images/margherita.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Spinaci",
     ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
-    price: 12,
+    price: 16,
     photoName: "images/spinaci.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Funghi",
     ingredients: "Tomato, mozarella, mushrooms, and onion",
-    price: 12,
+    price: 18,
     photoName: "images/funghi.jpg",
     soldOut: false,
   },
   {
     name: "Pizza Salamino",
     ingredients: "Tomato, mozarella, and pepperoni",
-    price: 15,
+    price: 20,
     photoName: "images/salamino.jpg",
     soldOut: true,
   },
   {
     name: "Pizza Prosciutto",
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
-    price: 18,
+    price: 24,
     photoName: "images/prosciutto.jpg",
     soldOut: false,
   },
@@ -60,7 +60,7 @@ function App() {
 function Header() {
   return (
     <header className="header">
-      <h1>John's Pizza Co.</h1>
+      <h1>John's Pizza Place</h1>
     </header>
   );
 }
@@ -69,40 +69,48 @@ function Menu() {
   return (
     <div className="menu">
       <h2>Our Menu</h2>
-      {pizzaData.length === 0 && <h1>Ainda não temos pizzas!</h1>}{" "}
+      <p className="menuParagraph">
+        Experience the epitome of Italian cuisine, crafted with natural
+        ingredients preserved in the finest conditions. Come, indulge in these
+        culinary delights!
+      </p>
+      {pizzaData.length === 0 && (
+        <h1>
+          We do not have dishes on the menu yet. Please check back in a few days
+          for updates.
+        </h1>
+      )}{" "}
       {pizzaData.map((pizza) => (
         <Pizza
-          key={pizza.name} /* key única para cada elemento da lista */
+          key={pizza.name}
           name={pizza.name}
           ingredients={pizza.ingredients}
           price={pizza.price}
           photoSrc={pizza.photoName}
-          soldOut={
-            pizza.soldOut
-          } /* prop soldOut passada para a renderização condicional do componente Pizza */
+          soldOut={pizza.soldOut}
         />
       ))}
     </div>
   );
 }
 
-/* renderização condicional com múltiplos returns. */
-function Pizza(props) {
-  if (props.soldOut) return null;
-
+/*O objeto props foi desestruturado. Dessa forma, já passamos diretamente as propriedades que iremos usar entre chaves. Depois é só chamar o nome da propriedade para usá-la.*/
+function Pizza({ name, ingredients, price, photoSrc, soldOut }) {
   return (
-    <div className="pizza">
-      <img src={props.photoSrc} alt={props.name} />
+    <div className={`pizza ${soldOut ? "soldOut" : ""}`}>
+      {" "}
+      {/*Atribuição de classe condicional*/}
+      <img src={photoSrc} alt={name} />
       <div className="pizzaData">
-        <h3>{props.name}</h3>
-        <p className="ingredients">{props.ingredients}</p>
-        <p>{`Price: $${props.price}`}</p>
+        <h3>{name}</h3>
+        <p className="ingredients">{ingredients}</p>
+        <p>{soldOut ? "Sold Out" : `Price: $${price}`}</p>{" "}
+        {/*Mudnça condicional do texto caso a pizza esteja ou não disponível.*/}
       </div>
     </div>
   );
 }
 
-/*Renderização condicional com o operador ternário*/
 function Footer() {
   let isOpen = false;
   const hour = new Date().getHours();
@@ -113,17 +121,20 @@ function Footer() {
   }
   return (
     <div className="footer">
+      <button className="button" type="button">
+        Order Now!
+      </button>
       {isOpen ? (
         <p>
-          Time:{new Date().toLocaleTimeString()} We are{" "}
+          Time: {new Date().toLocaleTimeString()} We are{" "}
           <span style={{ color: "green", fontWeight: "bold" }}>open</span> until
-          22:00. Come visit us or order online.
+          22:00. Come visit us or order online clicking in the button above.
         </p>
       ) : (
         <p>
-          Time:{new Date().toLocaleTimeString()} We are{" "}
+          Time: {new Date().toLocaleTimeString()} We are{" "}
           <span style={{ color: "red", fontWeight: "bold" }}>closed</span> until
-          22:00. Come visit us or order online.
+          8:00. Come visit us or order online clicking in the button above.
         </p>
       )}
     </div>
