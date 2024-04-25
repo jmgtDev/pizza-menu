@@ -94,3 +94,7 @@ Cada etapa, ou cada novo branch, terá suas novidades listadas aqui, com identif
 > 6- Modificação do componente Pizza para que alguns elementos tivessem classes atribuídas de forma condicional. No caso, as pizzas que estão sem estoque, passam a ficar em preto e branco. Além disso, pizzas sem estoque não mostram mais o preço e sim o aviso de esgotadas.
 
 > 7- Toda a estilização foi atualizada para funcionar em aparelhos mobile.
+
+**Branch 10:**
+
+> 1- Nesse branch foi feita a responsividade da página, adaptando-a a todos os tipos de tela.

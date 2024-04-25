@@ -80,32 +80,31 @@ function Menu() {
           for updates.
         </h1>
       )}{" "}
-      {pizzaData.map((pizza) => (
-        <Pizza
-          key={pizza.name}
-          name={pizza.name}
-          ingredients={pizza.ingredients}
-          price={pizza.price}
-          photoSrc={pizza.photoName}
-          soldOut={pizza.soldOut}
-        />
-      ))}
+      <div className="pizzas">
+        {pizzaData.map((pizza) => (
+          <Pizza
+            key={pizza.name}
+            name={pizza.name}
+            ingredients={pizza.ingredients}
+            price={pizza.price}
+            photoSrc={pizza.photoName}
+            soldOut={pizza.soldOut}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
-/*O objeto props foi desestruturado. Dessa forma, já passamos diretamente as propriedades que iremos usar entre chaves. Depois é só chamar o nome da propriedade para usá-la.*/
 function Pizza({ name, ingredients, price, photoSrc, soldOut }) {
   return (
     <div className={`pizza ${soldOut ? "soldOut" : ""}`}>
       {" "}
-      {/*Atribuição de classe condicional*/}
       <img src={photoSrc} alt={name} />
       <div className="pizzaData">
         <h3>{name}</h3>
         <p className="ingredients">{ingredients}</p>
         <p>{soldOut ? "Sold Out" : `Price: $${price}`}</p>{" "}
-        {/*Mudnça condicional do texto caso a pizza esteja ou não disponível.*/}
       </div>
     </div>
   );
